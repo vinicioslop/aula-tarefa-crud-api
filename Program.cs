@@ -54,7 +54,7 @@ app.MapGet("/api/tarefas/{id}", ([FromServices] tarefasContext _db,
     return Results.Ok(tarefa);
 });
 
-app.MapGet("/api/tarefas", ([FromServices] tarefasContext _db,
+app.MapGet("/api/tarefas/descricao", ([FromServices] tarefasContext _db,
     [FromQuery] string? descricao
 ) =>
 {
@@ -70,7 +70,7 @@ app.MapGet("/api/tarefas", ([FromServices] tarefasContext _db,
     return Results.Ok(tarefas);
 });
 
-app.MapGet("/api/tarefas", ([FromServices] tarefasContext _db,
+app.MapGet("/api/tarefas/pendentes", ([FromServices] tarefasContext _db,
     [FromQuery(Name = "somente_pendentes")] bool? somentePendentes,
     [FromQuery] string? descricao
 ) =>
